@@ -1,0 +1,105 @@
+﻿<Window x:Class="ManagementQuizKuvaiev.ScoreWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManagementQuizKuvaiev"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        WindowState="Normal" WindowStyle="None" ResizeMode="NoResize"
+        Title="ScoreWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/score.jpg"/>
+        </Grid.Background>
+
+        <Grid Grid.Row="0" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Тест | Куваєв Микита" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center" FontSize="10"/>
+            <Button Grid.Column="1" x:Name="MinimizeWindowBtn" Click="MinimizeWindowBtn_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="LightGreen"/>
+                            <Image Source="./Images/minimize-window.png" Width="13" Height="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Column="2" x:Name="WindowInWindowBtn" Click="WindowInWindowBtn_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="LightBlue"/>
+                            <Image Source="./Images/window-in-window.png" Width="13" Height="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Column="3" x:Name="MaximizeWindowBtn" Click="MaximizeWindowBtn_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="LightGoldenrodYellow"/>
+                            <Image Source="./Images/maximize-window.png" Width="13" Height="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Column="4" x:Name="CloseWindowBtn" Click="CloseWindowBtn_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="LightPink"/>
+                            <Image Source="./Images/close-window.png" Width="13" Height="13" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="РЕЗУЛЬТАТИ" FontSize="30" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Grid.Row="1" Text="Студент:" FontSize="20" FontWeight="Bold" Margin="0,0,20,0"/>
+                <TextBlock Grid.Row="1" Text="Студент" FontSize="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Grid.Row="1" Text="Група:" FontSize="20" FontWeight="Bold" Margin="0,0,20,0"/>
+                <TextBlock Grid.Row="1" Text="Група" FontSize="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Grid.Row="1" Text="Рекорд:" FontSize="20" FontWeight="Bold" Margin="0,0,20,0"/>
+                <TextBlock Grid.Row="1" Text="Рекорд" FontSize="20"/>
+            </StackPanel>
+            <Button Grid.Row="4" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" Name="CloseBtn" Click="CloseBtn_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Rectangle Fill="LightGreen" RadiusX="10" RadiusY="10"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+                <TextBlock Foreground="Black" Text="Завершити тест" FontWeight="Bold"/>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
